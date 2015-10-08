@@ -55,6 +55,8 @@ module.exports = function codeNameProcessor(log) {
         return findCodeName(node.declarations[0]);
       case 'VariableDeclarator':
         return node.id && node.id.name;
+      case 'MethodDefinition':
+        return findCodeName(node.value) || findCodeName(node.key);
       default:
         log.warn('HELP! Unrecognised node type: ' + node.type);
         log.warn(node);
