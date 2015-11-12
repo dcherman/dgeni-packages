@@ -1,10 +1,11 @@
 {
   "name": "dgeni-packages",
-  "version": "0.10.18",
+  "version": "0.11.1",
   "description": "A collection of dgeni packages for generating documentation from source code",
   "scripts": {
     "test": "jasmine-node .",
-    "cover": "istanbul cover jasmine-node -- ."
+    "cover": "istanbul cover jasmine-node -- .",
+    "docs": "dgeni ./docs"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,8 @@
     "catharsis": "^0.8.1",
     "change-case": "^2.1.0",
     "dgeni": "^0.4.0",
-    "esprima": "^1.0.4",
-    "estraverse": "^1.5.1",
+    "espree": "^2.2.3",
+    "estraverse": "^4.1.0",
     "glob": "~3.2.8",
     "htmlparser2": "^3.7.3",
     "lodash": "~2.4.1",
@@ -50,6 +51,7 @@
     "q-io": "~1.10.9",
     "semver": "^4.3.4",
     "shelljs": "^0.5.0",
+    "spdx-license-list": "^2.1.0",
     "stringmap": "^0.2.2",
     "winston": "~0.7.2"
   },
@@ -79,6 +81,11 @@
     "Marcin Wosinek <marcin.wosinek@gmail.com>",
     "MaartenVerbaarschot <m.vbschot@gmail.com>",
     "Martin Staffa <mjstaffa@googlemail.com>",
-    "Jacob Eggers <eggers@brandeis.edu>"
+    "Jacob Eggers <eggers@brandeis.edu>",
+    "Shai Resnik <shai.reznik@gmail.com>",
+    "Brian Hann <emailc0bra@gmail.com>",
+    "Matt Fairbrass <matt.fairbrass@gmail.com>",
+    "Keir Lawson <keirlawson@gmail.com>",
+    "Yair Leviel <yleviel@akamai.com>"
   ]
 }

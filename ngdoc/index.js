@@ -1,13 +1,16 @@
 var path = require('canonical-path');
 var Package = require('dgeni').Package;
 
-module.exports = new Package('ngdoc', [require('../jsdoc'), require('../nunjucks')])
+/**
+ * @dgPackage ngdoc
+ * @description AngularJS specific tag-defs, processors and templates. This loads the jsdoc and nunjucks packages for you.
+ */
+module.exports = new Package('ngdoc', [
+  require('../jsdoc'),
+  require('../nunjucks'),
+  require('../links')])
 
 .factory(require('./file-readers/ngdoc'))
-.factory(require('./inline-tag-defs/link'))
-.factory(require('./services/getAliases'))
-.factory(require('./services/getDocFromAlias'))
-.factory(require('./services/getLinkInfo'))
 .factory(require('./services/getTypeClass'))
 .factory(require('./services/moduleMap'))
 
@@ -26,11 +29,6 @@ module.exports = new Package('ngdoc', [require('../jsdoc'), require('../nunjucks
 .config(function(parseTagsProcessor, getInjectables) {
   parseTagsProcessor.tagDefinitions =
       parseTagsProcessor.tagDefinitions.concat(getInjectables(require('./tag-defs')));
-})
-
-
-.config(function(inlineTagProcessor, linkInlineTagDef) {
-  inlineTagProcessor.inlineTagDefinitions.push(linkInlineTagDef);
 })
 
 
